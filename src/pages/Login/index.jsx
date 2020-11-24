@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,7 +37,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login = () => {
+const Login = ({ setAuthenticated }) => {
+  const history = useHistory();
   const classes = useStyles();
   const schema = yup.object().shape({
     password: yup
@@ -57,14 +59,19 @@ const Login = () => {
     console.log(data);
     axios
       .post("https://ka-users-api.herokuapp.com/authenticate", { ...data })
-      .then((res) => console.log(res))
-      .catch((err) =>
+      .then((res) => {
+        window.localStorage.setItem("authToken", res.data.auth_token);
+        console.log(window.localStorage);
+        setAuthenticated(true);
+        history.push("/users");
+      })
+      .catch((err) => {
         setError("password", {
           message:
             err.response.data.error.user_authentication &&
             "Credenciais Inválidas",
-        })
-      );
+        });
+      });
   };
   return (
     <Container component="main" maxWidth="xs">
