@@ -11,6 +11,7 @@ import axios from "axios";
 
 const Authenticator = () => {
   const [authenticated, setAuthenticated] = useState(undefined);
+  const [usersData, setUsersData] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -22,8 +23,9 @@ const Authenticator = () => {
       .get("https://ka-users-api.herokuapp.com/users", {
         headers: { Authorization: token },
       })
-      .then(() => {
+      .then((res) => {
         setAuthenticated(true);
+        setUsersData(res.data);
         // history.push("users");
       })
       .catch(() => {
@@ -53,7 +55,7 @@ const Authenticator = () => {
         <button>LogOff</button>
       </Route>
       <Route path="/users">
-        <Users></Users>
+        <Users usersData={usersData}></Users>
       </Route>
 
       <Route path="/users/feedback/:id">
@@ -62,6 +64,12 @@ const Authenticator = () => {
 
       <Route path="/users/feedback/:id/new">
         <FeedbackForm></FeedbackForm>
+      </Route>
+      <Route exact path="/">
+        <Login setAuthenticated={setAuthenticated}></Login>
+      </Route>
+      <Route exact path="/register">
+        <UserRegister></UserRegister>
       </Route>
     </Switch>
   );
