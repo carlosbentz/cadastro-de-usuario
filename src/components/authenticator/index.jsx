@@ -43,33 +43,25 @@ const Authenticator = () => {
         <Route exact path="/">
           <Login setAuthenticated={setAuthenticated}></Login>
         </Route>
-        <Route exact path="/register">
+        <Route path="/register">
           <UserRegister></UserRegister>
         </Route>
       </Switch>
     );
   }
+  console.log(authenticated);
   return (
     <Switch>
-      <Route exact path="/logoff">
-        <button>LogOff</button>
-      </Route>
       <Route path="/users">
-        <Users usersData={usersData}></Users>
+        <Users usersData={usersData} authenticated={authenticated}></Users>
       </Route>
 
       <Route path="/users/feedback/:id">
-        <UserFeedbacks></UserFeedbacks>
+        <UserFeedbacks authenticated={authenticated}></UserFeedbacks>
       </Route>
 
       <Route path="/users/feedback/:id/new">
         <FeedbackForm></FeedbackForm>
-      </Route>
-      <Route exact path="/">
-        <Login setAuthenticated={setAuthenticated}></Login>
-      </Route>
-      <Route exact path="/register">
-        <UserRegister></UserRegister>
       </Route>
     </Switch>
   );

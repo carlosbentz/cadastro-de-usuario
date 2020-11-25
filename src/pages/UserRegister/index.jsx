@@ -186,39 +186,6 @@ const UserRegister = () => {
         </form>
       </div>
     </Container>
-
-    // <div>
-    //   <form onSubmit={handleSubmit(handleForm)}>
-    //     <div>
-    //       <div>
-    //         <input name="name" placeholder="Nome" ref={register}></input>
-    //         <p style={{ color: "red" }}>{errors.name?.message}</p>
-    //       </div>
-    //       <input name="user" placeholder="Usuário" ref={register}></input>
-    //       <p style={{ color: "red" }}>{errors.user?.message}</p>
-    //     </div>
-    //     <div>
-    //       <input name="email" placeholder="Email" ref={register}></input>
-    //       <p style={{ color: "red" }}>{errors.email?.message}</p>
-    //     </div>
-    //     <div>
-    //       <input name="password" placeholder="Senha" ref={register}></input>
-    //       <p style={{ color: "red" }}>{errors.password?.message}</p>
-    //     </div>
-    //     <div>
-    //       <input
-    //         placeholder="Confirmar Senha"
-    //         name="passwordConfirm"
-    //         ref={register}
-    //       ></input>
-    //       <p style={{ color: "red" }}>{errors.passwordConfirm?.message}</p>
-    //     </div>
-
-    //     <div>
-    //       <button type="submit">Cadastrar</button>
-    //     </div>
-    //   </form>
-    // </div>
   );
 };
 

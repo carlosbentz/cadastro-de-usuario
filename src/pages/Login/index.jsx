@@ -16,6 +16,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import NavigationPanel from "../../components/navigationPanel/";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -129,23 +130,6 @@ const Login = ({ setAuthenticated }) => {
       </div>
     </Container>
   );
-
-  // <form onSubmit={handleSubmit(handleForm)}>
-  //   <div>
-  //     <input name="user" placeholder="Nome" ref={register}></input>
-  //     <p style={{ color: "red" }}>{errors.user?.message}</p>
-  //   </div>
-  //   <div>
-  //     <input name="password" placeholder="Senha" ref={register}></input>
-  //     <p style={{ color: "red" }}>{errors.password?.message}</p>
-  //   </div>
-
-  //   <div>
-  //     <Button type="submit" variant="contained" color="primary">
-  //       Login
-  //     </Button>
-  //   </div>
-  // </form>
 };
 
 export default Login;
