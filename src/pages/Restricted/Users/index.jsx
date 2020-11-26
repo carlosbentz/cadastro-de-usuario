@@ -65,7 +65,7 @@ const Users = ({ usersData, authenticated }) => {
                   <TableCell align="left">{user.email}</TableCell>
                   <TableCell align="left">{user.user}</TableCell>
                   <TableCell align="center">
-                    <Link to={`/users/feedback/${user.id}`}>
+                    <Link to={`/users/feedbacks/${user.id}`}>
                       Vá para Feedbacks
                     </Link>
                   </TableCell>

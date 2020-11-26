@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
   logoff: {
-    width: "5vw",
+    width: "100%",
     color: "white",
   },
 });
@@ -105,7 +105,7 @@ const UserFeedbacks = ({ authenticated }) => {
       </div>
       <AppBar position="static">
         <Button className={classes.logoff} onClick={newFeedback}>
-          LogOff
+          Novo Feedback
         </Button>
       </AppBar>
     </div>

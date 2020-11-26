@@ -9,6 +9,10 @@ import FeedbackForm from "../../pages/Restricted/FeedbackForm/";
 
 import axios from "axios";
 
+const Comp = () => {
+  return <div>teste</div>;
+};
+
 const Authenticator = () => {
   const [authenticated, setAuthenticated] = useState(undefined);
   const [usersData, setUsersData] = useState([]);
@@ -16,7 +20,7 @@ const Authenticator = () => {
 
   useEffect(() => {
     const token = window.localStorage.getItem("authToken");
-    if (token === false) {
+    if (!token) {
       setAuthenticated(false);
     }
     axios
@@ -52,15 +56,15 @@ const Authenticator = () => {
   console.log(authenticated);
   return (
     <Switch>
-      <Route path="/users">
+      <Route exact path="/users">
         <Users usersData={usersData} authenticated={authenticated}></Users>
       </Route>
 
-      <Route path="/users/feedback/:id">
+      <Route exact path="/users/feedbacks/:id">
         <UserFeedbacks authenticated={authenticated}></UserFeedbacks>
       </Route>
 
-      <Route path="/users/feedback/:id/new">
+      <Route exact path="/users/feedback/:id/new">
         <FeedbackForm></FeedbackForm>
       </Route>
     </Switch>
