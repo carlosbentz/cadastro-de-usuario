@@ -56,8 +56,8 @@ const FeedbackForm = () => {
       .post(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
         user,
       })
-      .then((res) => console.log(res))
-      .then((res) =>
+      .then(
+        (res) => console.log(res),
         history.push(
           `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`
         )
@@ -68,7 +68,7 @@ const FeedbackForm = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
-          Sign up
+          Feedback
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit(handleForm)}>
           <Grid container spacing={2}>

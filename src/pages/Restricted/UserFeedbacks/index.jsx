@@ -40,7 +40,7 @@ const UserFeedbacks = ({ authenticated }) => {
     });
 
   const newFeedback = () => {
-    history.push(`/users/feedback/${feedbacks.id}/new`);
+    history.push(`/users/feedback/${params.id}/new`);
   };
 
   const classes = useStyles();
