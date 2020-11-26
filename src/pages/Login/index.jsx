@@ -57,12 +57,13 @@ const Login = ({ setAuthenticated }) => {
   });
 
   const handleForm = (data) => {
-    console.log(data);
     axios
       .post("https://ka-users-api.herokuapp.com/authenticate", { ...data })
       .then((res) => {
-        window.localStorage.setItem("authToken", res.data.auth_token);
-        console.log(window.localStorage);
+        window.localStorage.setItem(
+          "authToken",
+          JSON.stringify(res.data.auth_token)
+        );
         setAuthenticated(true);
         history.push("/users");
       })

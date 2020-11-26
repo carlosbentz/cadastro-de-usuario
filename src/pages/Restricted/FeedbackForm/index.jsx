@@ -37,8 +37,13 @@ const FeedbackForm = () => {
   const params = useParams();
   const history = useHistory();
   const classes = useStyles();
+<<<<<<< HEAD
   const token = window.localStorage.getItem("authToken");
 
+=======
+  let user = {};
+  const token = window.localStorage.getItem("authToken");
+>>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     comment: yup.string(),
@@ -52,6 +57,7 @@ const FeedbackForm = () => {
   const handleForm = (data) => {
     const user = { ...data };
     const headers = { authorization: token };
+<<<<<<< HEAD
     console.log(user);
 
     axios
@@ -64,6 +70,16 @@ const FeedbackForm = () => {
         (res) => console.log(res),
         history.push(`/users/${params.id}/feedbacks`)
       );
+=======
+
+    axios
+      .post(
+        `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks/`,
+        user,
+        { headers }
+      )
+      .then(history.push(`/users/${params.id}/feedbacks`));
+>>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
   };
   return (
     <Container component="main" maxWidth="xs">

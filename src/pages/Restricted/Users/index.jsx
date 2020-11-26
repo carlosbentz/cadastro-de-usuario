@@ -19,7 +19,6 @@ const useStyles = makeStyles({
 
 const Users = ({ usersData, authenticated }) => {
   const classes = useStyles();
-  console.log(usersData);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
