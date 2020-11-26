@@ -36,7 +36,6 @@ const UserFeedbacks = ({ authenticated }) => {
         headers: { Authorization: token },
       })
       .then((res) => {
-        console.log(res.data);
         setFeedbacks(res.data);
       });
   }, []);

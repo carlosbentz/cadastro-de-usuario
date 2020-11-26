@@ -52,8 +52,6 @@ const FeedbackForm = () => {
   const handleForm = (data) => {
     const user = { ...data };
     const headers = { authorization: token };
-    console.log(user);
-    console.log(headers);
 
     axios
       .post(
@@ -61,10 +59,7 @@ const FeedbackForm = () => {
         user,
         { headers }
       )
-      .then(
-        (res) => console.log(res),
-        history.push(`/users/${params.id}/feedbacks`)
-      );
+      .then(history.push(`/users/${params.id}/feedbacks`));
   };
   return (
     <Container component="main" maxWidth="xs">
