@@ -31,6 +31,7 @@ const UserFeedbacks = ({ authenticated }) => {
   const [feedbacks, setFeedbacks] = useState([]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   useEffect(() => {
     axios
       .get(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
@@ -46,6 +47,8 @@ const UserFeedbacks = ({ authenticated }) => {
       });
   }, []);
 =======
+=======
+>>>>>>> parent of 56e1223... fixed feedback post
   axios
     .get(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
       headers: { Authorization: token },
@@ -54,6 +57,7 @@ const UserFeedbacks = ({ authenticated }) => {
       console.log(res.data);
       setFeedbacks(res.data);
     });
+<<<<<<< HEAD
 >>>>>>> parent of b8b5b69... fixed axios bug
 
 =======
@@ -61,6 +65,9 @@ const UserFeedbacks = ({ authenticated }) => {
       });
   }, []);
 >>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
+=======
+
+>>>>>>> parent of 56e1223... fixed feedback post
   const newFeedback = () => {
     history.push(`/users/feedback/${params.id}/new`);
   };
