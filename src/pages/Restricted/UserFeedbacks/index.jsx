@@ -36,17 +36,9 @@ const UserFeedbacks = ({ authenticated }) => {
         headers: { Authorization: token },
       })
       .then((res) => {
-<<<<<<< HEAD
-        console.log(res.data);
         setFeedbacks(res.data);
       });
   }, []);
-
-=======
-        setFeedbacks(res.data);
-      });
-  }, []);
->>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
   const newFeedback = () => {
     history.push(`/users/feedback/${params.id}/new`);
   };
