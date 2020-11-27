@@ -55,6 +55,9 @@ const Authenticator = () => {
   console.log(authenticated);
   return (
     <Switch>
+      <Route exact path="/">
+        <p>Você já está logado.</p>
+      </Route>
       <Route exact path="/users">
         <Users usersData={usersData} authenticated={authenticated}></Users>
       </Route>
