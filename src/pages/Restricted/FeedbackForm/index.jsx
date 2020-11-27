@@ -58,6 +58,7 @@ const FeedbackForm = () => {
     const user = { ...data };
     const headers = { authorization: token };
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(user);
 
     axios
@@ -71,6 +72,10 @@ const FeedbackForm = () => {
         history.push(`/users/${params.id}/feedbacks`)
       );
 =======
+=======
+    console.log(user);
+    console.log(headers);
+>>>>>>> parent of 5114700... removed console.log's
 
     axios
       .post(
@@ -78,8 +83,15 @@ const FeedbackForm = () => {
         user,
         { headers }
       )
+<<<<<<< HEAD
       .then(history.push(`/users/${params.id}/feedbacks`));
 >>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
+=======
+      .then(
+        (res) => console.log(res),
+        history.push(`/users/${params.id}/feedbacks`)
+      );
+>>>>>>> parent of 5114700... removed console.log's
   };
   return (
     <Container component="main" maxWidth="xs">

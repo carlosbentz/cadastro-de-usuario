@@ -53,6 +53,7 @@ const Authenticator = () => {
       </Switch>
     );
   }
+  console.log(authenticated);
   return (
     <Switch>
       <Route exact path="/users">

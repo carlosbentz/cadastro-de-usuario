@@ -69,9 +69,11 @@ const UserRegister = () => {
 
   const handleForm = (data) => {
     user = { ...data };
+    console.log(user);
 
     axios
       .post("https://ka-users-api.herokuapp.com/users", { user })
+      .then((res) => console.log(res))
       .then((res) => history.push("/"))
       .catch((err) =>
         setError("password", {

@@ -37,6 +37,9 @@ const UserFeedbacks = ({ authenticated }) => {
       })
       .then((res) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 5114700... removed console.log's
         console.log(res.data);
         setFeedbacks(res.data);
       });
