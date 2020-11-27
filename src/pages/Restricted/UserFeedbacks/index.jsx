@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import NavigationPanel from "../../../components/navigationPanel/";
 import axios from "axios";
@@ -30,6 +30,7 @@ const UserFeedbacks = ({ authenticated }) => {
   const token = window.localStorage.getItem("authToken");
   const [feedbacks, setFeedbacks] = useState([]);
 
+<<<<<<< HEAD
   useEffect(() => {
     axios
       .get(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
@@ -44,6 +45,16 @@ const UserFeedbacks = ({ authenticated }) => {
         setFeedbacks(res.data);
       });
   }, []);
+=======
+  axios
+    .get(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
+      headers: { Authorization: token },
+    })
+    .then((res) => {
+      console.log(res.data);
+      setFeedbacks(res.data);
+    });
+>>>>>>> parent of b8b5b69... fixed axios bug
 
 =======
         setFeedbacks(res.data);

@@ -38,12 +38,16 @@ const FeedbackForm = () => {
   const history = useHistory();
   const classes = useStyles();
 <<<<<<< HEAD
+<<<<<<< HEAD
   const token = window.localStorage.getItem("authToken");
 
 =======
   let user = {};
   const token = window.localStorage.getItem("authToken");
 >>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
+=======
+  let user = {};
+>>>>>>> parent of b8b5b69... fixed axios bug
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     comment: yup.string(),
@@ -55,21 +59,25 @@ const FeedbackForm = () => {
   });
 
   const handleForm = (data) => {
+<<<<<<< HEAD
     const user = { ...data };
     const headers = { authorization: token };
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+    user = { ...data };
+>>>>>>> parent of b8b5b69... fixed axios bug
     console.log(user);
 
     axios
-      .post(
-        `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`,
+      .post(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
         user,
-        { headers }
-      )
+      })
       .then(
         (res) => console.log(res),
-        history.push(`/users/${params.id}/feedbacks`)
+        history.push(
+          `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`
+        )
       );
 =======
 =======
