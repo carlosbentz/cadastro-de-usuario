@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import NavigationPanel from "../../../components/navigationPanel/";
 import axios from "axios";
@@ -30,14 +30,16 @@ const UserFeedbacks = ({ authenticated }) => {
   const token = window.localStorage.getItem("authToken");
   const [feedbacks, setFeedbacks] = useState([]);
 
-  axios
-    .get(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
-      headers: { Authorization: token },
-    })
-    .then((res) => {
-      console.log(res.data);
-      setFeedbacks(res.data);
-    });
+  useEffect(() => {
+    axios
+      .get(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
+        headers: { Authorization: token },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setFeedbacks(res.data);
+      });
+  }, []);
 
   const newFeedback = () => {
     history.push(`/users/feedback/${params.id}/new`);

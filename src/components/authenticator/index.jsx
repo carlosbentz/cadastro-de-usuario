@@ -30,7 +30,6 @@ const Authenticator = () => {
       .then((res) => {
         setAuthenticated(true);
         setUsersData(res.data);
-        // history.push("users");
       })
       .catch(() => {
         setAuthenticated(false);

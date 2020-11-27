@@ -58,9 +58,7 @@ const FeedbackForm = () => {
       })
       .then(
         (res) => console.log(res),
-        history.push(
-          `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`
-        )
+        history.push(`/users/${params.id}/feedbacks`)
       );
   };
   return (
