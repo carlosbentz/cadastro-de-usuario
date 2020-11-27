@@ -37,20 +37,7 @@ const FeedbackForm = () => {
   const params = useParams();
   const history = useHistory();
   const classes = useStyles();
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const token = window.localStorage.getItem("authToken");
-
-=======
   let user = {};
-<<<<<<< HEAD
-  const token = window.localStorage.getItem("authToken");
->>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
-=======
-  let user = {};
->>>>>>> parent of b8b5b69... fixed axios bug
-=======
->>>>>>> parent of 56e1223... fixed feedback post
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     comment: yup.string(),
@@ -62,15 +49,7 @@ const FeedbackForm = () => {
   });
 
   const handleForm = (data) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const user = { ...data };
-    const headers = { authorization: token };
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     user = { ...data };
->>>>>>> parent of b8b5b69... fixed axios bug
     console.log(user);
 
     axios
@@ -83,36 +62,6 @@ const FeedbackForm = () => {
           `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`
         )
       );
-=======
-=======
-    console.log(user);
-    console.log(headers);
->>>>>>> parent of 5114700... removed console.log's
-=======
-    user = { ...data };
-    console.log(user);
->>>>>>> parent of 56e1223... fixed feedback post
-
-    axios
-      .post(`https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`, {
-        user,
-<<<<<<< HEAD
-        { headers }
-      )
-<<<<<<< HEAD
-      .then(history.push(`/users/${params.id}/feedbacks`));
->>>>>>> 51147008bb4824f97092c3a32514bd50686f7b9c
-=======
-=======
-      })
->>>>>>> parent of 56e1223... fixed feedback post
-      .then(
-        (res) => console.log(res),
-        history.push(
-          `https://ka-users-api.herokuapp.com/users/${params.id}/feedbacks`
-        )
-      );
->>>>>>> parent of 5114700... removed console.log's
   };
   return (
     <Container component="main" maxWidth="xs">
